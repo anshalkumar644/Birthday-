@@ -1,0 +1,122 @@
+/* Basic body styling and font import */
+body {
+    font-family: 'Hind', sans-serif;
+    overflow: hidden; /* Prevents scrollbars, keeping confetti contained */
+}
+
+/* Custom font class for the special script font */
+.font-dancing {
+    font-family: 'Dancing Script', cursive;
+}
+
+/* Container to set up the 3D perspective for the card flip */
+.card-container {
+    perspective: 1000px;
+}
+
+/* The card itself, with 3D properties and transition */
+.card {
+    width: 350px;
+    height: 500px;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    cursor: pointer;
+}
+
+/* The class added by JavaScript to trigger the flip animation */
+.card.open {
+    transform: rotateY(-180deg);
+}
+
+/* Common styles for both front and back faces of the card */
+.card-face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Hides the back of the element when it's facing away */
+    -webkit-backface-visibility: hidden; /* For Safari compatibility */
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Styling for the front of the card */
+.card-front {
+    background: linear-gradient(135deg, #86efac, #16a34a);
+    color: #052e16;
+    z-index: 2; /* Ensures the front is on top initially */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Styling for the back of the card (the inside) */
+.card-back {
+    background: linear-gradient(135deg, #ecfccb, #d9f99d);
+    color: #3f6212;
+    transform: rotateY(180deg); /* Rotated to be the back face */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 30px;
+}
+
+/* Styling for individual confetti pieces */
+.confetti {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: #f00; /* Base color, will be overridden by JS */
+    opacity: 0.7;
+    border-radius: 50%;
+    animation: fall 5s linear infinite;
+}
+
+/* Animation for the confetti falling down the screen */
+@keyframes fall {
+    0% {
+        transform: translateY(-10vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* Bouncing animation for the gift icon on the front */
+.gift-icon {
+    font-size: 5rem;
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(-5%);
+        animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+    }
+    50% {
+        transform: translateY(0);
+        animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+    }
+}
+
+/* Styling for the sound icon on the back of the card */
+.sound-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.5s 0.5s; /* Fades in after the card opens */
+}
+
+/* Makes the sound icon visible when the card is open */
+.card.open .sound-icon {
+    opacity: 0.6;
+}
+
