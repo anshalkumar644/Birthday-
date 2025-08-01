@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>जन्मदिन की शुभकामनाएँ, प्रिंस!</title>
+    
+    <!-- External CSS File -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Hind:wght@400;600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (used for utility classes) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tone.js (for audio) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.7.77/Tone.js"></script>
+</head>
+<body class="bg-lime-100 flex items-center justify-center min-h-screen">
+
+    <div id="confetti-container"></div>
+
+    <div class="card-container">
+        <div id="birthdayCard" class="card">
+            <!-- Card Front -->
+            <div class="card-face card-front">
+                <div class="gift-icon">🎁</div>
+                <h1 class="font-dancing text-4xl mt-4">प्रिंस, तुम्हारे लिए एक सरप्राइज़!</h1>
+                <p class="mt-8 text-lg font-semibold bg-white/50 px-4 py-2 rounded-full shadow-inner">खोलने के लिए क्लिक करें</p>
+            </div>
+            <!-- Card Back (Inside) -->
+            <div class="card-face card-back">
+                <h2 class="font-dancing text-5xl text-green-700">जन्मदिन मुबारक हो!</h2>
+                <div class="mt-4 text-2xl text-green-800">🎉 प्रिंस 🎉</div>
+                <p class="mt-6 text-lg text-lime-800 leading-relaxed">
+                    यह दिन तुम्हारी ज़िंदगी में हज़ार बार आए, और हर बार खुशियाँ लाए। तुम्हारा हर सपना पूरा हो और हर कदम पर कामयाबी मिले।
+                </p>
+                <p class="mt-4 text-lg text-lime-800 font-semibold">
+                    इस खास दिन पर ढेर सारा प्यार।
+                </p>
+                <div class="mt-8 text-lime-900 font-bold">
+                    - तुम्हारे प्यारे दोस्त की तरफ से
+                </div>
+                <div class="sound-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External JavaScript File -->
+    <script src="script.js"></script>
+</body>
+</html>
+
